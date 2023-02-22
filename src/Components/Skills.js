@@ -5,10 +5,10 @@ import { DiPython } from "react-icons/di";
 import { SiJavascript } from "react-icons/si";
 import { SiDjango } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
-import { DiGit } from "react-icons/di";
 import { FaNodeJs } from "react-icons/fa";
 import { FaDocker } from "react-icons/fa";
 import { SiNginx } from "react-icons/si";
+import { SiPostgresql } from "react-icons/si";
 
 const Skills = () => {
   return (
@@ -43,16 +43,16 @@ const Skills = () => {
           <FaNodeJs size="8rem" color="#3c873a" />
         </div>
         <div className="skillsGridItem">
-          <h1>Git</h1>
-          <DiGit size="8rem" color="#F1502F" />
-        </div>
-        <div className="skillsGridItem">
           <h1>Docker</h1>
           <FaDocker size="8rem" color="#0073ec" />
         </div>
         <div className="skillsGridItem">
           <h1>Nginx</h1>
           <SiNginx size="8rem" color="#009639" />
+        </div>
+        <div className="skillsGridItem">
+          <h1>Postgresql</h1>
+          <SiPostgresql size="8rem" color="#336791" />
         </div>
       </div>
     </section>
