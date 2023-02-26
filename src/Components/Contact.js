@@ -26,6 +26,10 @@ const Contact = ({ data }) => {
     }).then((response) => {
       console.log("Response from email sent: ", response);
     });
+    setName("");
+    setEmail("");
+    setSubject("");
+    setMessage("");
   };
 
   return (
@@ -44,7 +48,7 @@ const Contact = ({ data }) => {
 
       <div className="row">
         <div className="eight columns">
-          <form onSubmit={(e) => handleSubmit()}>
+          <form onClick={(e) => handleSubmit(e)}>
             <fieldset>
               <div>
                 <label htmlFor="contactName">
