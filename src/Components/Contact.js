@@ -13,14 +13,19 @@ const Contact = ({ data }) => {
     var contactMessage = data.contactmessage;
   }
 
-  const submitForm = () => {
-    window.open(
-      `mailto:${contactEmail}?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(name)} (${encodeURIComponent(
-        email
-      )}): ${encodeURIComponent(message)}`
-    );
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("https://zanderambrose.dev/api/v1/mail", {
+      method: "POST",
+      body: {
+        name,
+        emailFrom: email,
+        subject,
+        message,
+      },
+    }).then((response) => {
+      console.log("Response from email sent: ", response);
+    });
   };
 
   return (
@@ -39,7 +44,7 @@ const Contact = ({ data }) => {
 
       <div className="row">
         <div className="eight columns">
-          <form onSubmit={submitForm}>
+          <form onSubmit={(e) => handleSubmit()}>
             <fieldset>
               <div>
                 <label htmlFor="contactName">
@@ -99,7 +104,7 @@ const Contact = ({ data }) => {
               </div>
 
               <div>
-                <button onClick={submitForm} type="submit" className="submit">
+                <button type="submit" className="submit">
                   Submit
                 </button>
               </div>
