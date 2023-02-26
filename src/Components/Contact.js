@@ -48,7 +48,7 @@ const Contact = ({ data }) => {
 
       <div className="row">
         <div className="eight columns">
-          <form onClick={(e) => handleSubmit(e)}>
+          <form onSubmit={(e) => handleSubmit(e)}>
             <fieldset>
               <div>
                 <label htmlFor="contactName">
